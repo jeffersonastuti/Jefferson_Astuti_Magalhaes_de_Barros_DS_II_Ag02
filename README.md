@@ -6,7 +6,7 @@ Projeto da Agenda 02 de Desenvolvimento de Sistemas II.
 - `cadastro.html`: formulário de cadastro.
 - `processaCadastro.php`: recebe os dados por POST e mostra a confirmação.
 - `estilo.css`: aparência do formulário e da página de processamento.
-- `Relatorio_Fichario_Cadastro_Colaboradores.pdf`: relatório final para entrega.
+- `Jefferson_Astuti_Magalhaes_de_Barros_DS_II_Ag02.pdf`: relatório final para entrega.
 
 ## Names usados no formulário
 `nome1`, `idade2`, `profissao3`, `salario4` e `experiencia5`.
