@@ -8,7 +8,7 @@ Projeto da Agenda 02 de Desenvolvimento de Sistemas II.
 - `estilo.css`: aparência do formulário e da página de processamento.
 - `Jefferson_Astuti_Magalhaes_de_Barros_DS_II_Ag02.pdf`: relatório final para entrega.
 
-## Names usados no formulário
+## Nomes usados no formulário
 `nome1`, `idade2`, `profissao3`, `salario4` e `experiencia5`.
 
 ## Execução local
