@@ -1,21 +1,10 @@
 <?php
-// Verifica se a página foi acessada pelo envio do formulário.
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Cada informação enviada pelo formulário é armazenada em uma variável.
-    $nome = htmlspecialchars(trim($_POST["nome1"] ?? ""), ENT_QUOTES, "UTF-8");
-    $idade = htmlspecialchars(trim($_POST["idade2"] ?? ""), ENT_QUOTES, "UTF-8");
-    $profissao = htmlspecialchars(trim($_POST["profissao3"] ?? ""), ENT_QUOTES, "UTF-8");
-    $salario = htmlspecialchars(trim($_POST["salario4"] ?? ""), ENT_QUOTES, "UTF-8");
-    $experiencia = htmlspecialchars(trim($_POST["experiencia5"] ?? ""), ENT_QUOTES, "UTF-8");
-
-    // Formata o salário somente para melhorar a apresentação na página.
-    $salarioFormatado = is_numeric($salario)
-        ? "R$ " . number_format((float) $salario, 2, ",", ".")
-        : $salario;
-} else {
-    // Caso alguém abra o PHP diretamente, as variáveis recebem valores vazios.
-    $nome = $idade = $profissao = $salarioFormatado = $experiencia = "";
-}
+// Recebe os dados enviados pelo formulário e armazena cada informação em uma variável.
+$nome = $_POST["nome1"];
+$idade = $_POST["idade2"];
+$profissao = $_POST["profissao3"];
+$salario = $_POST["salario4"];
+$experiencia = $_POST["experiencia5"];
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -28,33 +17,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body>
     <main class="container">
         <section class="cartao">
-            <?php if ($_SERVER["REQUEST_METHOD"] === "POST"): ?>
-                <h1>Cadastro recebido</h1>
-                <p class="subtitulo">Confira os dados enviados.</p>
+            <h1>Cadastro recebido</h1>
+            <p class="subtitulo">Confira os dados enviados.</p>
 
-                <div class="resultado">
-                    <p><strong>Nome completo:</strong> <?= $nome ?></p>
-                    <p><strong>Idade:</strong> <?= $idade ?> anos</p>
-                    <p><strong>Profissão:</strong> <?= $profissao ?></p>
-                    <p><strong>Salário pretendido:</strong> <?= $salarioFormatado ?></p>
-                    <p><strong>Experiência anterior:</strong> <?= nl2br($experiencia) ?></p>
-                </div>
+            <div class="resultado">
+                <?php
+                echo "<p><strong>Nome completo:</strong> $nome</p>";
+                echo "<p><strong>Idade:</strong> $idade anos</p>";
+                echo "<p><strong>Profissão:</strong> $profissao</p>";
+                echo "<p><strong>Salário pretendido:</strong> R$ $salario</p>";
+                echo "<p><strong>Experiência anterior:</strong> $experiencia</p>";
+                ?>
+            </div>
 
-                <div class="mensagem-personalizada">
-                    <h2>Mensagem</h2>
-                    <p>
-                        Olá, <strong><?= $nome ?></strong>! Seu cadastro para oportunidades na área de
-                        <strong><?= $profissao ?></strong> foi recebido com sucesso. A experiência informada,
-                        “<?= $experiencia ?>”, será considerada durante a análise do perfil.
-                    </p>
-                </div>
+            <div class="mensagem-personalizada">
+                <h2>Mensagem</h2>
+                <?php
+                echo "<p>Olá, <strong>$nome</strong>! Seu cadastro para a área de <strong>$profissao</strong> foi recebido com sucesso. Também registramos sua experiência: $experiencia.</p>";
+                ?>
+            </div>
 
-                <a class="botao-voltar" href="cadastro.html">Voltar ao formulário</a>
-            <?php else: ?>
-                <h1>Nenhum cadastro enviado</h1>
-                <p>Esta página deve ser acessada após o envio do formulário.</p>
-                <a class="botao-voltar" href="cadastro.html">Ir para o formulário</a>
-            <?php endif; ?>
+            <a class="botao-voltar" href="cadastro.html">Voltar ao formulário</a>
         </section>
     </main>
 </body>
