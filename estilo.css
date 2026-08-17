@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #24313f;
+}
+
+.container {
+    width: min(92%, 820px);
+    margin: 40px auto;
+}
+
+.cartao {
+    background: #ffffff;
+    border: 1px solid #dfe5ea;
+    border-radius: 14px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(36, 49, 63, 0.08);
+}
+
+h1 {
+    margin: 0 0 6px;
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.subtitulo {
+    margin: 0 0 28px;
+    color: #667685;
+}
+
+.campo {
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.linha {
+    display: flex;
+    gap: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px 13px;
+    border: 1px solid #b9c4ce;
+    border-radius: 8px;
+    font: inherit;
+    background: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #bdd7ff;
+    border-color: #3f7fd3;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+.botao-voltar {
+    display: inline-block;
+    border: 0;
+    border-radius: 8px;
+    padding: 12px 18px;
+    background: #245ea8;
+    color: #ffffff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover,
+.botao-voltar:hover {
+    background: #194a88;
+}
+
+.resultado {
+    margin: 22px 0;
+    padding: 18px 20px;
+    border-left: 4px solid #245ea8;
+    background: #f7f9fb;
+    border-radius: 6px;
+}
+
+.resultado p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.mensagem-personalizada {
+    margin: 24px 0;
+    padding: 20px;
+    background: #eef7ee;
+    border: 1px solid #cfe5cf;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+    .container {
+        margin: 20px auto;
+    }
+
+    .cartao {
+        padding: 22px;
+    }
+
+    .linha {
+        display: block;
+    }
+}
