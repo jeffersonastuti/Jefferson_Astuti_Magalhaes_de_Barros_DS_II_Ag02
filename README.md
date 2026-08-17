@@ -7,7 +7,6 @@ Projeto da Agenda 02 de Desenvolvimento de Sistemas II.
 - `processaCadastro.php`: recebe os dados por POST e mostra a confirmação.
 - `estilo.css`: aparência do formulário e da página de processamento.
 - `Relatorio_Fichario_Cadastro_Colaboradores.pdf`: relatório final para entrega.
-- `print_ia_01.png` a `print_ia_06.png`: capturas da conversa com IA em ordem cronológica.
 
 ## Names usados no formulário
 `nome1`, `idade2`, `profissao3`, `salario4` e `experiencia5`.
